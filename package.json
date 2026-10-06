@@ -9,8 +9,8 @@
     "workers/*"
   ],
   "scripts": {
-    "typecheck": "npm --workspace packages/common run build && npm run typecheck -ws --if-present",
-    "build": "npm --workspace packages/common run build && npm run build -ws --if-present",
+    "typecheck": "npm --workspace packages/common run build && npm --workspace packages/common run typecheck && npm --workspace apps/dashboard run typecheck && npm --workspace apps/main-bot run typecheck && npm --workspace apps/server-api run typecheck && npm --workspace workers/tts-worker run typecheck",
+    "build": "npm --workspace packages/common run build && npm --workspace apps/dashboard run build && npm --workspace apps/main-bot run build && npm --workspace apps/server-api run build && npm --workspace workers/tts-worker run build",
     "verify": "node scripts/verify.mjs",
     "test": "npm run typecheck && npm run verify:all",
     "dev:dashboard": "npm --workspace apps/dashboard run dev",
