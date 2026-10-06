@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Security report
-    url: https://github.com/example/yanagi-bot/security/advisories/new
-    about: Report vulnerabilities privately.
+  - name: 🔐 セキュリティ報告
+    url: https://github.com/example/yanagi/security/advisories/new
+    about: 脆弱性は非公開で報告してください。

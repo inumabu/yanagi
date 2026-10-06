@@ -1,6 +1,6 @@
-# API Contracts
+# 🔗 API 仕様
 
-## TTS job request
+## 🔊 TTS Job リクエスト
 
 ```json
 {
@@ -12,15 +12,15 @@
 }
 ```
 
-`text` は1〜500文字、`voiceId` は0以上の整数です。API は validation error、認証エラー、rate limit を共通 Error Code で返します。
+`text` は1〜500文字、`voiceId` は0以上の整数です。API は入力検証エラー、認証エラー、Rate Limit を共通 Error Code で返します。
 
-## Job state
+## 📊 Job 状態
 
 ```text
-queued -> processing -> completed
-                    └─> failed
-queued  -> cancelled
-queued  -> expired
+queued → processing → completed
+                   └→ failed
+queued  → cancelled
+queued  → expired
 ```
 
-Queue message には `kind`、Job、requestId を含め、同じ Idempotency Key の二重処理を拒否します。
+Queue Message には `kind`、Job、`requestId` を含め、同じ Idempotency Key の二重処理を拒否します。

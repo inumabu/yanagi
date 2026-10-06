@@ -1,10 +1,10 @@
-## Summary
+## 📝 概要
 
-## Why
+## 💡 変更理由
 
-## Changes
+## 🔧 変更内容
 
-## Verification
+## 🧪 検証
 
 - [ ] `npm ci`
 - [ ] `npm run typecheck`
@@ -12,10 +12,10 @@
 - [ ] `npm run build`
 - [ ] `npm run package`
 
-## Security
+## 🔐 セキュリティ
 
-## UI Changes
+## 🖥️ UI 変更
 
-## Known Limitations
+## ⚠️ 既知の制限
 
-## Documentation
+## 📚 ドキュメント

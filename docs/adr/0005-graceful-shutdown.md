@@ -1,13 +1,13 @@
-# ADR 0002: Graceful Shutdown
+# 📝 ADR 0005：Graceful Shutdown
 
-## Context
+## 📌 背景
 
-A long-running Bot must stop accepting work, close the Discord client, and release Redis connections during deploys and restarts.
+常駐 Bot は Deploy や Restart の際に新しい処理を止め、Discord Client と Redis Connection を安全に終了する必要があります。
 
-## Decision
+## ✅ 決定
 
-Handle SIGINT and SIGTERM, destroy the Discord client, quit Redis, and then exit. Docker uses init and a stop grace period.
+SIGINT と SIGTERM を処理し、Discord Client を Destroy、Redis を Quit してから終了します。Docker では Init と Stop Grace Period を使用します。
 
-## Consequences
+## 📌 結果
 
-Deploys are safer and connection leaks are reduced. Future workers must adopt the same lifecycle contract.
+Deploy の安全性が高まり、Connection Leak を減らせます。将来の Worker も同じ Lifecycle Contract に従います。

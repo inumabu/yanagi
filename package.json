@@ -2,7 +2,7 @@
   "name": "yanagi",
   "private": true,
   "version": "0.1.0",
-  "description": "Yanagi Discord Bot ecosystem foundation",
+  "description": "Yanagi Discord Bot エコシステム基盤",
   "workspaces": [
     "packages/*",
     "apps/*",

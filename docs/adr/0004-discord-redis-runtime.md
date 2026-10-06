@@ -1,17 +1,17 @@
-# ADR 0001: Discord and Redis Runtime Boundary
+# 📝 ADR 0004：Discord と Redis の Runtime 境界
 
-## Context
+## 📌 背景
 
-Discord Gateway requires a long-running Node.js process, while rate limits and runtime coordination must work across process restarts and future shards.
+Discord Gateway には常駐 Node.js Process が必要です。一方、Rate Limit と Runtime Coordination は Process 再起動や将来の Shard をまたいで動作する必要があります。
 
-## Decision
+## ✅ 決定
 
-Use discord.js for the Gateway process and Redis for short-lived rate limits, cache, locks, and runtime state. Redis is not the permanent source of business truth.
+Gateway Process には discord.js を使用し、短期 Rate Limit、Cache、Lock、Runtime State には Redis を使用します。Redis は永続データの正本にしません。
 
-## Alternatives
+## 🔄 代替案
 
-In-memory state was rejected because it is lost during restart and cannot coordinate multiple processes. A database was deferred because the Foundation only requires ephemeral coordination.
+In-memory State は再起動で失われ、複数 Process の Coordination ができないため採用しません。永続 DB は 基盤 で必要な範囲を超えるため、Business Data 用として別途導入します。
 
-## Consequences
+## 📌 結果
 
-The Bot remains horizontally extensible, but Redis availability becomes a runtime dependency for rate-limited commands.
+Bot は水平拡張しやすくなりますが、Rate Limit 対象 Command では Redis 可用性が Runtime Dependency になります。
