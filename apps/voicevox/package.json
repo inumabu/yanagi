@@ -1,0 +1,1 @@
+{"name":"@yanagi/voicevox","version":"0.1.0","private":true,"scripts":{"health":"curl --fail http://localhost:50021/version"}}

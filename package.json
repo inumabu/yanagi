@@ -1,0 +1,28 @@
+{
+  "name": "yanagi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Yanagi Discord Bot ecosystem foundation",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "workers/*"
+  ],
+  "scripts": {
+    "typecheck": "npm --workspace packages/common run build && npm run typecheck -ws --if-present",
+    "build": "npm --workspace packages/common run build && npm run build -ws --if-present",
+    "verify": "node scripts/verify.mjs",
+    "test": "npm run typecheck && npm run verify:all",
+    "dev:dashboard": "npm --workspace apps/dashboard run dev",
+    "dev:api": "npm --workspace apps/server-api run dev",
+    "verify:all": "node scripts/verify-all.mjs",
+    "package": "npm run build && npm pack --dry-run",
+    "ci": "npm ci && npm run typecheck && npm run verify:all && npm run build"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

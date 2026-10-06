@@ -1,0 +1,10 @@
+import { z } from 'zod';
+export const ErrorCode = { UNAUTHORIZED:'UNAUTHORIZED', FORBIDDEN:'FORBIDDEN', VALIDATION_ERROR:'VALIDATION_ERROR', RATE_LIMITED:'RATE_LIMITED', INTERNAL_ERROR:'INTERNAL_ERROR' } as const;
+export type ErrorCode = typeof ErrorCode[keyof typeof ErrorCode];
+export const TtsJobStatus = z.enum(['queued','processing','completed','failed','cancelled','expired']);
+export const TtsJobSchema = z.object({ idempotencyKey:z.string().min(16).max(128), guildId:z.string().min(1), userId:z.string().min(1), text:z.string().min(1).max(500), voiceId:z.number().int().nonnegative().default(1) });
+export type TtsJob = z.infer<typeof TtsJobSchema>;
+export type TtsJobState = { id:string; status:z.infer<typeof TtsJobStatus>; createdAt:string; updatedAt:string; error?:string };
+export const ApiErrorSchema = z.object({ code:z.string(), message:z.string(), requestId:z.string() });
+export type Permission = 'guild.admin' | 'guild.manage' | 'tts.request' | 'points.manage';
+export type QueueMessage = { kind:'tts.generate'; job:TtsJob; requestId:string };

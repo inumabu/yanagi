@@ -1,0 +1,9 @@
+{
+  "name":"yanagi-server-api",
+  "main":"src/index.ts",
+  "compatibility_date":"2024-12-01",
+  "d1_databases":[{"binding":"DB","database_name":"yanagi","database_id":"REPLACE_WITH_D1_DATABASE_ID"}],
+  "r2_buckets":[{"binding":"ASSETS","bucket_name":"yanagi-assets"}],
+  "queues":{"producers":[{"binding":"TTS_QUEUE","queue":"yanagi-tts"}]},
+  "triggers":{"crons":["0 * * * *"]}
+}
