@@ -1,8 +1,8 @@
-# Yanagi Roadmap
+# 🗺️ Yanagi ロードマップ
 
-- ✅ Foundation: Repository boundary、Common contract、API health / TTS endpoint、Bot skeleton、TTS HMAC skeleton、Dashboard skeleton、Infra Compose
-- ⏳ Guild foundation / Welcome / Logging / Voice
+- ✅ 基盤：Repository Boundary、Common Contract、API Health / TTS Endpoint、Bot Skeleton、TTS HMAC Skeleton、Dashboard Skeleton、Infra Compose
+- ⏳ Guild 基盤 / Welcome / Logging / Voice
 - ⏳ Points / Omikuji / Prize / Lottery
-- ⏳ TTS Queue production、VOICEVOX synthesis、R2、Job persistence
-- ⏳ AI、Dashboard OAuth、Monitoring、Backup、Retention Cron
-- ⏳ Load test、failure test、deployment hardening
+- ⏳ TTS Queue Production、VOICEVOX Synthesis、R2、Job Persistence
+- ⏳ AI、Dashboard OAuth、監視、バックアップ、保持期間 Cron
+- ⏳ Load Test、Failure Test、Deployment Hardening

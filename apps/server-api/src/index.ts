@@ -11,14 +11,14 @@ const requestId = () => crypto.randomUUID();
 app.use('/api/*', async (c, next) => {
   const expected = c.env.YANAGI_API_TOKEN;
   const actual = c.req.header('authorization');
-  if (!expected || actual !== `Bearer ${expected}`) return c.json({ code: 'UNAUTHORIZED', message: 'Unauthorized', requestId: requestId() }, 401);
+  if (!expected || actual !== `Bearer ${expected}`) return c.json({ code: 'UNAUTHORIZED', message: '🔐 認証が必要です', requestId: requestId() }, 401);
   await next();
 });
 app.get('/health', (c) => c.json({ ok: true, service: 'yanagi-server-api', time: new Date().toISOString() }));
 
 app.post('/api/v1/tts/jobs', async (c) => {
   const parsed = TtsJobSchema.safeParse(await c.req.json().catch(() => null));
-  if (!parsed.success) return c.json({ code: 'VALIDATION_ERROR', message: 'Invalid TTS job', requestId: requestId() }, 400);
+  if (!parsed.success) return c.json({ code: 'VALIDATION_ERROR', message: '⚠️ TTS Job の入力が不正です', requestId: requestId() }, 400);
   const job = parsed.data;
   const existing = await c.env.DB.prepare('SELECT id, status FROM tts_jobs WHERE idempotency_key = ?1').bind(job.idempotencyKey).first<ExistingJob>();
   if (existing) return c.json({ id: existing.id, status: existing.status, replay: true }, 200);
@@ -28,5 +28,5 @@ app.post('/api/v1/tts/jobs', async (c) => {
   await c.env.TTS_QUEUE.send({ kind: 'tts.generate', job, requestId: id });
   return c.json({ id, status: 'queued', replay: false }, 202);
 });
-app.all('*', (c) => c.json({ code: 'NOT_FOUND', message: 'Not found', requestId: requestId() }, 404));
-export default { fetch: app.fetch, async scheduled(_event: ScheduledEvent, _env: Env, _ctx: ExecutionContext) { /* retention, backup, cleanup */ } };
+app.all('*', (c) => c.json({ code: 'NOT_FOUND', message: '🔎 リソースが見つかりません', requestId: requestId() }, 404));
+export default { fetch: app.fetch, async scheduled(_event: ScheduledEvent, _env: Env, _ctx: ExecutionContext) { /* 🕒 Retention、Backup、Cleanup */ } };

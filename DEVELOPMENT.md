@@ -1,6 +1,6 @@
-# Development
+# 🛠️ 開発ガイド
 
-## Requirements
+## 📋 必要環境
 
 Node.js 22 LTS、npm、Git を使用します。常駐実行と本番相当の検証には Docker が必要です。
 
@@ -11,11 +11,11 @@ git --version
 docker --version
 ```
 
-## Setup
+## 🚀 セットアップ
 
 ```bash
 git clone <repository-url>
-cd yanagi-bot
+cd yanagi
 cp .env.example .env
 npm ci
 npm run typecheck
@@ -23,21 +23,20 @@ npm run verify:all
 npm run build
 ```
 
-`DISCORD_TOKEN` と `DISCORD_CLIENT_ID` は `.env` にだけ設定し、Git にコミットしません。
+`DISCORD_TOKEN`、`DISCORD_CLIENT_ID`、`YANAGI_API_TOKEN` は `.env` にのみ設定し、Git に Commit しません。
 
-## Branches
+## 🌿 Branch
 
-`main` への直接 push は禁止します。次のブランチ形式を使用します。
+`main` への直接 Push は禁止します。
 
 ```text
 feature/<name> fix/<name> refactor/<name> test/<name>
 docs/<name> ci/<name> chore/<name>
 ```
 
-## Local commands
+## 🧪 ローカルコマンド
 
 ```bash
-npm run dev
 npm run typecheck
 npm run verify:all
 npm run build
@@ -45,8 +44,8 @@ npm run package
 npm run test
 ```
 
-検証スクリプトは Node.js を直接 spawn し、npm の入れ子実行に依存しません。失敗時は検証名と exit code を表示します。
+検証 Script は Node.js を直接 Spawn し、npm の入れ子実行に依存しません。失敗時は検証名と Exit Code を表示します。
 
-## Feature workflow
+## 🔁 機能追加の流れ
 
-Issue、Branch、Implementation、Local Verification、Pull Request、CI、Review、Merge の順で進めます。新しい Discord command は `src/commands.ts` の登録と handler の両方を更新し、入力検証、Rate Limit、エラー表示、ログ、テストを確認します。
+Issue → Branch → Implementation → Local 検証 → Pull Request → CI → Review → Merge の順で進めます。新しい Discord Command は登録と Handler の両方を更新し、入力検証、Rate Limit、エラー表示、ログ、テストを確認します。

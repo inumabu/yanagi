@@ -1,4 +1,4 @@
-name: CI
+name: 🧪 CI 検証
 on: [push, pull_request]
 concurrency: {group: ci-${{ github.workflow }}-${{ github.ref }}, cancel-in-progress: true}
 jobs:

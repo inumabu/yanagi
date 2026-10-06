@@ -1,4 +1,4 @@
-name: npm lockfile update
+name: 🔄 npm Lockfile 更新
 on:
   schedule: [{cron: '0 3 * * 1'}]
   workflow_dispatch:

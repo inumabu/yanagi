@@ -1,31 +1,32 @@
-# Changelog
+# 📝 変更履歴
 
-## [Unreleased]
+## [未リリース]
 
-### Added
+### ✨ 追加
 
-- Touwa code-management requirements integrated into Yanagi Bot
-- CI、Scheduled CI、Release、Dependabot、lockfile update workflow
-- Issue / Pull Request templates and ADR structure
+- Yanagi のコード管理要件を統合
+- CI、Scheduled CI、Release、Dependabot、Lockfile Update Workflow
+- Issue / Pull Request Template と ADR 構成
+- 全文書、UI、ログ、運用表示の日本語化と絵文字対応
 
 ## [0.1.0] - 2026-10-06
 
-### Added
+### ✨ 追加
 
-- Node.js + TypeScript + discord.js Bot foundation
-- Redis rate limit and resilience settings
-- Pino structured logging
-- Dockerfile and Redis Compose service
-- `/ping` and `/health` commands
+- Node.js + TypeScript + discord.js Bot 基盤
+- Redis Rate Limit と Resilience 設定
+- Pino Structured Logging
+- Dockerfile と Redis Compose Service
+- `/ping` と `/health` Command
 
-### Security
+### 🔐 セキュリティ
 
-- Minimal Discord Gateway Intent
-- Environment-based secret loading
-- Non-root Docker runtime
-- Redis internal network and fail-closed rate limit
+- 最小限の Discord Gateway Intent
+- Environment-based Secret Loading
+- Non-root Docker Runtime
+- Redis 内部 Network と Fail-closed Rate Limit
 
-### Known limitations
+### ⚠️ 既知の制限
 
-- Discord credentials and production Gateway connection are not verified in this environment.
-- Feature modules, sharding policy, metrics, and external workers are future phases.
+- Discord Credential を使った本番 Gateway 接続は未検証です。
+- Feature Module、Sharding Policy、Metrics、External Worker は今後の Phase です。

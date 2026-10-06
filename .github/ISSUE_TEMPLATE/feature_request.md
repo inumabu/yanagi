@@ -1,16 +1,16 @@
 ---
-name: Feature request
-about: Propose a feature
+name: ✨ 機能提案
+about: 新しい機能を提案する
 title: "feat: "
 labels: enhancement
 ---
-## Background
-## Problem or opportunity
-## Goal
-## Expected result
-## Scope
-## Non-scope
-## Security and architecture impact
-## Verification plan
-## Acceptance criteria
+## 🧭 背景
+## 💡 問題または機会
+## 🎯 目的
+## ✅ 期待する結果
+## 📦 対象範囲
+## 🚫 対象外
+## 🔐 セキュリティ / アーキテクチャへの影響
+## 🧪 検証計画
+## ✅ 受け入れ条件
 - [ ]

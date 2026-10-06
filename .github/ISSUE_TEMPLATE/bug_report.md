@@ -1,19 +1,19 @@
 ---
-name: Bug report
-about: Report a reproducible problem
+name: 🐞 不具合報告
+about: 再現可能な問題を報告する
 title: "bug: "
 labels: bug
 ---
-## Background
-## Problem
-## Steps to reproduce
-## Expected result
-## Actual result
-## Environment
+## 🧭 背景
+## ❗ 問題
+## 🔁 再現手順
+## ✅ 期待する結果
+## ❌ 実際の結果
+## 💻 環境
 - OS:
 - Node.js:
 - Redis:
 - Commit:
-## Logs
-<!-- Remove tokens and personal data. -->
-## Security impact
+## 📋 ログ
+<!-- Token と個人情報を削除してください。 -->
+## 🔐 セキュリティへの影響

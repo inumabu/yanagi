@@ -1,18 +1,18 @@
-# Yanagi Bot 0.1.0 Release Notes
+# 🚀 Yanagi 0.1.0 リリースノート
 
-## Overview
+## 📌 概要
 
-discord.js、Redis、Docker を使う常駐型 Bot の Foundation です。
+discord.js、Redis、Docker を使う常駐型 Bot の 基盤 です。
 
-## Added
+## ✨ 追加
 
 - `/ping` と `/health`
-- Redis rate limit、retry、graceful shutdown
-- Pino structured logging
-- Docker multi-stage build と Compose healthcheck
-- TypeScript、verification、CI/CD、運用ドキュメント
+- Redis Rate Limit、Retry、Graceful Shutdown
+- Pino Structured Logging
+- Docker Multi-stage Build と Compose Healthcheck
+- TypeScript、検証、CI/CD、運用ドキュメント
 
-## Verification
+## ✅ 検証
 
 - `npm ci`
 - `npm run typecheck`
@@ -20,6 +20,6 @@ discord.js、Redis、Docker を使う常駐型 Bot の Foundation です。
 - `npm run build`
 - `npm run package`
 
-## Known Issues
+## ⚠️ 既知の問題
 
-実際の Discord 接続と Docker daemon 上の起動は認証情報・環境依存のため未検証です。
+実際の Discord 接続と Docker Daemon 上の起動は Credential と環境に依存するため未検証です。
